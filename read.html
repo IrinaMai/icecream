@@ -1,0 +1,90 @@
+<picture>
+    <source srcset="" media="" type="" />
+    <source srcset="" media="" type="" />
+    <img src="" alt="" />
+  </picture>
+  <!-- ============================ -->
+
+  <!-- Если браузер не поддерживает svg-графику, будет загружен `icon.png` -->
+​<picture>
+    <source srcset="icon.svg" type="image/svg+xml" />
+    <img src="icon.png" alt="Иконка" />
+  </picture>
+
+  <!-- ============================================ -->
+
+  <!-- Для экранов шире 600px будет загружен photo-wide.jpg -->
+<picture>
+    <source srcset="photo-wide.jpg" media="(min-width: 600px)" />
+    <img src="photo.jpg" alt="Фотография" />
+  </picture>
+
+  <!-- =================================================== -->
+
+  <picture>
+    <source srcset="photo.webp" type="image/webp" />
+    <img src="photo.jpg" alt="Фотография" />
+  </picture>
+  <!-- ============================================================= -->
+
+  <picture>
+    <source
+      srcset="photo-300.webp 1x, photo-600.webp 2x, photo-1200w.webp 3x"
+      type="image/webp"
+    />
+    <img
+      srcset="photo-300.jpg 1x, photo-600.jpg 2x, photo-1200w.jpg 3x"
+      src="photo-300.jpg"
+      alt="Фотография"
+      width="300"
+    />
+  </picture>
+  <!-- ========================================================== -->
+  .box {
+    width: 200px;
+    height: 300px;
+  
+    background-image: url('photo@2x.png');
+    background-size: 200px 300px;
+  }
+  <!-- =========================================================== -->
+  .box {
+    background-image: url('photo@2x.png');
+    background-size: contain;
+  }
+  //==================================================================
+
+  .box {
+    width: 480px;
+    height: 320px;
+    background-image: url('photo.png');
+    background-size: 480px 320px;
+  }
+  
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .box {
+      background-image: url('photo@2x.png');
+    }
+  }
+  //=============================================================
+
+  .box {
+    width: 480px;
+    height: 320px;
+    background-image: url('photo.png');
+    background-size: 480px 320px;
+  }
+  
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (-o-min-device-pixel-ratio: 2/1),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .box {
+      background-image: url('photo@2x.png');
+    }
+  }
+
+  //=====================================================================
